@@ -1,0 +1,3 @@
+object App_streaming {
+
+}
