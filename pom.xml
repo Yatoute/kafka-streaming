@@ -4,51 +4,79 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.example</groupId>
+    <groupId>databuilderhub</groupId>
     <artifactId>kafka-streaming</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0</version>
+
+    <name>kafka-streaming</name>
+    <url>https://github.com/Yatoute/kafka-streaming</url>
+    <description>Développement d'applications streaming avec kafka streams</description>
+
+    <developers>
+        <developer>
+            <email>mintoamayatoute@gmail.com</email>
+            <name>Yatoute MINTOAMA</name>
+        </developer>
+    </developers>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <scala.version>2.12.3</scala.version>
+        <scala.langage.version>2.12.3</scala.langage.version>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
+        <kafka.clients.version>2.1.0</kafka.clients.version>
+        <kafka.streams.version>2.1.0</kafka.streams.version>
+        <log4j.version>2.13.3</log4j.version>
+        <jackson.databind.version>2.6.7.3</jackson.databind.version>
+        <junit.version>4.12</junit.version>
+        <scalatest.version>3.1.1</scalatest.version>
+        <maven.compiler.plugin>3.8.1</maven.compiler.plugin>
+        <scala.maven.plugin>4.5.3</scala.maven.plugin>
     </properties>
 
     <dependencies>
+        <!-- Scala -->
+        <!-- https://mvnrepository.com/artifact/org.scala-lang/scala-library -->
+        <dependency>
+            <groupId>org.scala-lang</groupId>
+            <artifactId>scala-library</artifactId>
+            <version>${scala.langage.version}</version>
+        </dependency>
+
         <!-- Kafka Clients -->
         <dependency>
             <groupId>org.apache.kafka</groupId>
             <artifactId>kafka-clients</artifactId>
-            <version>2.1.0</version>
+            <version>${kafka.clients.version}</version>
         </dependency>
 
         <!-- Kafka Streams -->
         <dependency>
             <groupId>org.apache.kafka</groupId>
             <artifactId>kafka-streams</artifactId>
-            <version>2.1.0</version>
+            <version>${kafka.streams.version}</version>
         </dependency>
 
         <!-- Log4j -->
+        <!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core -->
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-core</artifactId>
-            <version>2.13.3</version>
+            <version>${log4j.version}</version>
         </dependency>
 
         <!-- Jackson -->
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
-            <version>2.6.7.3</version>
+            <version>${jackson.databind.version}</version>
         </dependency>
 
         <!-- ScalaTest -->
         <dependency>
             <groupId>org.scalatest</groupId>
-            <artifactId>scalatest_2.12</artifactId> <!-- ✅ ici -->
-            <version>3.1.1</version>
+            <artifactId>scalatest_2.12</artifactId>
+            <version>${scalatest.version}</version>
             <scope>test</scope>
         </dependency>
 
@@ -56,7 +84,7 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.12</version>
+            <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
@@ -67,10 +95,10 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.8.1</version>
+                <version>${maven.compiler.plugin}</version>
                 <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
+                    <source>${maven.compiler.source}</source>
+                    <target>${maven.compiler.target}</target>
                 </configuration>
             </plugin>
 
@@ -78,7 +106,7 @@
             <plugin>
                 <groupId>net.alchim31.maven</groupId>
                 <artifactId>scala-maven-plugin</artifactId>
-                <version>4.5.3</version>
+                <version>${scala.maven.plugin}</version>
                 <executions>
                     <execution>
                         <goals>
