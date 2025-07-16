@@ -50,10 +50,11 @@
             <version>${kafka.clients.version}</version>
         </dependency>
 
-        <!-- Kafka Streams -->
+        <!-- Kafka Streams pour scala -->
+        <!-- https://mvnrepository.com/artifact/org.apache.kafka/kafka-streams-scala -->
         <dependency>
             <groupId>org.apache.kafka</groupId>
-            <artifactId>kafka-streams</artifactId>
+            <artifactId>kafka-streams-scala_2.12</artifactId>
             <version>${kafka.streams.version}</version>
         </dependency>
 
